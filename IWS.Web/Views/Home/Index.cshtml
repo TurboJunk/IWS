@@ -1,0 +1,17 @@
+﻿@model IEnumerable<IWS.Web.Models.ProductPartitial>
+@{
+    ViewBag.Title = "Все пользователи";
+}
+<a asp-action="Create">Add Product</a>
+<table class="table">
+    <tr><td>Id</td><td>Name</td><td>Price</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td><a asp-action="Edit" asp-route-id="@item.Id">Изменить</a></td>
+        </tr>
+    }
+</table>
